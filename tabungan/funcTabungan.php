@@ -1,4 +1,4 @@
-<?php  
+<?php 
 $conn = mysqli_connect('localhost', 'root', '', 'ciloktia');
 
 function query($query){
@@ -9,6 +9,14 @@ function query($query){
 		$rows[] = $row;
 	}
 	return $rows;
+}
+
+
+function singleQuery($query){
+	global $conn;
+	$result = mysqli_fetch_assoc(mysqli_query($conn, $query));
+
+	return $result;
 }
 
 ?>
